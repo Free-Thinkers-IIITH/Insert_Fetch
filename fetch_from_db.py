@@ -1,7 +1,9 @@
 from pymongo import MongoClient
 
 def fetch_from_db(keyword):
-    client = MongoClient('mongodb://localhost:27017/paper_db')
+    # client = MongoClient('mongodb://localhost:27017/paper_db')
+    client = MongoClient('mongodb+srv://asxz:asxz@cluster0.4g04r.mongodb.net/ssd?retryWrites=true&w=majority')
+
     db=client.paper_db
     papers_collec=db['papers'].find({'$text':{'$search':keyword}})# , 'rank':{'$ne':'NA'}})
     paper_lst=list(papers_collec)

@@ -44,7 +44,9 @@ def map_dblp_data(raw_data,keyword):
 def insert_dblp(keyword):
     '''This function inserts the data from dblp api into database'''
     #Connect to db
-    client = MongoClient('mongodb://localhost:27017/paper_db')
+    # client = MongoClient('mongodb://localhost:27017/paper_db')
+    client = MongoClient('mongodb+srv://asxz:asxz@cluster0.4g04r.mongodb.net/ssd?retryWrites=true&w=majority')
+
     db=client.paper_db
     papers_collec=db['papers']
     #Get conference list
